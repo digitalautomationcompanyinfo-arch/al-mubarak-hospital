@@ -40,6 +40,7 @@ import {
   AlertTriangle,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   LineChart
 } from "lucide-react";
 
@@ -84,6 +85,7 @@ const iconMap = {
   AlertTriangle,
   ChevronLeft,
   ChevronRight,
+  ChevronUp,
   LineChart
 };
 

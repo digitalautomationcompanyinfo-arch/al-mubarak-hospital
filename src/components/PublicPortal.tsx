@@ -316,6 +316,7 @@ export default function PublicPortal({
                     src="https://images.unsplash.com/photo-1586773860418-d3b3202815e1?auto=format&fit=crop&w=800&q=80"
                     alt={lang === "ar" ? "مستشفى المبارك التخصصي" : "Al-Mubarak Specialized Hospital"}
                     referrerPolicy="no-referrer"
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Subtle vignette/gradient overlay */}
@@ -860,6 +861,7 @@ export default function PublicPortal({
                         src={article.image}
                         alt={article.title}
                         referrerPolicy="no-referrer"
+                        loading="lazy"
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
@@ -939,6 +941,7 @@ export default function PublicPortal({
                       src={selectedNews.image}
                       alt={selectedNews.title}
                       referrerPolicy="no-referrer"
+                      loading="lazy"
                       className="w-full h-full object-cover"
                     />
                   ) : (

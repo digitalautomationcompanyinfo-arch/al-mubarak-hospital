@@ -4,6 +4,8 @@ import { initialNews, initialDepartments, initialFeedbacks, mediaStats } from ".
 import PublicPortal from "./components/PublicPortal";
 import StaffPortal from "./components/StaffPortal";
 import DynamicIcon from "./components/DynamicIcon";
+import BackToTop from "./components/BackToTop";
+import EmergencyCallButton from "./components/EmergencyCallButton";
 import SEO from "./components/SEO";
 import { translations, bilingualNews, bilingualDepartments, bilingualStats, bilingualFeedbacks } from "./data/translations";
 
@@ -543,6 +545,12 @@ export default function App() {
           </div>
         </div>
       </footer>
+
+      {/* Back to Top Button */}
+      <BackToTop />
+
+      {/* Floating Emergency Call Button (Mobile) */}
+      <EmergencyCallButton phoneNumber={t.phoneNum} lang={lang} />
 
     </div>
   );
