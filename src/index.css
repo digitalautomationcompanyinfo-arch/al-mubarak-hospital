@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  
+  --color-burgundy-950: #1A0505;
+  --color-burgundy-900: #3D0C0C;
+  --color-burgundy-850: #5C1A1A;
+  --color-burgundy-800: #7A2E2E;
+  --color-burgundy-750: #8B3A3A;
+  --color-burgundy-700: #9E4A4A;
+  --color-burgundy-600: #B55C5C;
+  --color-burgundy-500: #C97070;
+  --color-burgundy-400: #DA8C8C;
+  --color-burgundy-300: #EAB5B5;
+  --color-burgundy-200: #F5D8D8;
+  --color-burgundy-100: #FCF0F0;
+  
+  --color-beige-50: #FDF9F2;
+  --color-beige-100: #F5EDDD;
+  --color-beige-200: #EAD9BC;
+  --color-beige-300: #D9C09A;
+  --color-beige-400: #C4A578;
+  --color-beige-500: #A88B5E;
+  --color-beige-600: #8B7047;
+
+  --color-red-500: #C0392B;
+  --color-red-600: #A93226;
+  --color-red-700: #8B1A1A;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at top, rgba(154, 74, 74, 0.06), transparent 30%),
+    linear-gradient(180deg, #FDF9F2 0%, #F5EDDD 100%);
+  color: #1a1a1a;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+select,
+textarea {
+  transition: all 180ms ease-in-out;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(128, 0, 0, 0.35);
+  outline-offset: 2px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes tickerMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.55s ease-out both;
+}
+
+.animate-scale-up {
+  animation: scaleUp 0.35s ease-out both;
+}
+
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 3rem;
+  animation: tickerMove 24s linear infinite;
+}
+
+.ticker-reverse {
+  animation-direction: reverse;
+}
+
+.ticker-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.ticker-item {
+  flex-shrink: 0;
+}
+
+/* Custom scrollbar matching hospital theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige-100);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-burgundy-800);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-burgundy-700);
+}
+

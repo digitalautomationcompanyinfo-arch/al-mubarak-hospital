@@ -1,0 +1,22 @@
+# Render.com deployment configuration
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: al-mubarak-hospital
+    env: node
+    region: frankfurt  # Closest to Sudan/Middle East
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false  # Set manually in Render dashboard for security
+      - key: STAFF_PASSWORD
+        sync: false  # Set manually in Render dashboard
+      - key: PORT
+        value: "3000"
+    plan: free
+    autoDeploy: true

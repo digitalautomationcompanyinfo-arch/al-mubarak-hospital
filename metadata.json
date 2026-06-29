@@ -1,0 +1,6 @@
+{
+  "name": "Al-Mubarak Specialized Hospital",
+  "description": "الموقع الرسمي وبوابة التواصل والإعلام لمستشفى المبارك بكسلا، السودان - يحتوي على بوابة عامة وأدوات ذكاء اصطناعي لإدارة المحتوى والبيانات الصحفية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
