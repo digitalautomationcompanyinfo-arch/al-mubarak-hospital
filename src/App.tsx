@@ -6,6 +6,7 @@ import StaffPortal from "./components/StaffPortal";
 import DynamicIcon from "./components/DynamicIcon";
 import BackToTop from "./components/BackToTop";
 import EmergencyCallButton from "./components/EmergencyCallButton";
+import HospitalStructuredData from "./components/HospitalStructuredData";
 import SEO from "./components/SEO";
 import { translations, bilingualNews, bilingualDepartments, bilingualStats, bilingualFeedbacks } from "./data/translations";
 
@@ -144,6 +145,7 @@ export default function App() {
     >
       
       <SEO lang={lang} />
+      <HospitalStructuredData lang={lang} />
 
       {/* 1. TOP STATS BAR & PUBLIC HEALTH TICKER */}
       <div className="bg-gradient-to-r from-slate-900 via-[#0f172a] to-slate-900 text-slate-100 text-xs py-2.5 px-4 md:px-8 border-b border-slate-800/45 shadow-sm overflow-hidden">
