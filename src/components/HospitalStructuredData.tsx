@@ -12,12 +12,12 @@ export default function HospitalStructuredData({ lang }: HospitalStructuredDataP
     "@type": "Hospital",
     name: isArabic ? "مستشفى المبارك التخصصي" : "Al-Mubarak Specialized Hospital",
     description: isArabic
-      ? "مستشفى المبارك التخصصي بكسلا، حي الجسر، السودان - نقدم خدمات طبية متكاملة ورعاية صحية متميزة لأهالي ولاية كسلا وشرق السودان."
-      : "Al-Mubarak Specialized Hospital in Al-Gisr District, Kassala, Sudan - providing integrated healthcare services to Kassala State and Eastern Sudan.",
+      ? "مستشفى المبارك التخصصي - نقدم خدمات طبية متكاملة ورعاية صحية متميزة لجميع المرضى."
+      : "Al-Mubarak Specialized Hospital - providing integrated healthcare services with high clinical standards.",
     url: "https://al-mubarak.org",
-    telephone: "+24912345678",
-    email: "media@al-mubarak.org",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+    telephone: "+249100121111",
+    email: "Almubarakhospital2023@gmail.com",
+    image: "/pptx_images/slide10_img17.jpg",
     address: {
       "@type": "PostalAddress",
       streetAddress: isArabic ? "حي الجسر، بالقرب من كوبري القاش الرئيسي" : "Al-Gisr District, near Al-Gash Main Bridge",

@@ -9,21 +9,30 @@ interface SEOProps {
 }
 
 export default function SEO({
-  title = "مستشفى المبارك التخصصي - كسلا، السودان",
-  description = "الموقع الرسمي لمستشفى المبارك التخصصي بكسلا، حي الجسر، السودان. نقدم خدمات طبية متكاملة ورعاية صحية متميزة لأهالي ولاية كسلا وشرق السودان.",
+  title,
+  description,
   lang = "ar",
-  image = "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80",
+  image = "/pptx_images/slide10_img17.jpg",
   url = "https://al-mubarak.org",
 }: SEOProps) {
   const isArabic = lang === "ar";
 
-  const fullTitle = isArabic
-    ? `${title} | مستشفى المبارك`
-    : `${title} | Al-Mubarak Hospital`;
+  const defaultTitle = isArabic
+    ? "مستشفى المبارك التخصصي - السودان"
+    : "Al-Mubarak Specialized Hospital - Sudan";
 
-  const fullDescription = isArabic
-    ? description
-    : "Official website of Al-Mubarak Specialized Hospital, Al-Gisr District, Kassala, Sudan. Delivering integrated healthcare and distinguished medical services to Kassala State and Eastern Sudan.";
+  const defaultDesc = isArabic
+    ? "الموقع الرسمي لمستشفى المبارك التخصصي. نقدم خدمات طبية متكاملة ورعاية صحية متميزة لجميع المرضى."
+    : "Official website of Al-Mubarak Specialized Hospital. Delivering integrated healthcare and distinguished medical services to all patients.";
+
+  const currentTitle = title || defaultTitle;
+  const currentDesc = description || defaultDesc;
+
+  const fullTitle = isArabic
+    ? `${currentTitle} | مستشفى المبارك`
+    : `${currentTitle} | Al-Mubarak Hospital`;
+
+  const fullDescription = currentDesc;
 
   return (
     <Helmet>

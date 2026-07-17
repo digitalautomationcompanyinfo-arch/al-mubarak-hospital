@@ -42,7 +42,9 @@ export function NewsCardSkeleton() {
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
       {[1, 2, 3].map((i) => (
-        <Skeleton key={i} variant="card" className="h-56" />
+        <div key={i}>
+          <Skeleton variant="card" className="h-56" />
+        </div>
       ))}
     </div>
   );
@@ -53,7 +55,9 @@ export function TableSkeleton({ rows = 5 }: { rows?: number }) {
     <div className="space-y-3">
       <Skeleton variant="text" className="w-full h-8" />
       {Array.from({ length: rows }).map((_, i) => (
-        <Skeleton key={i} variant="text" className="w-full h-6" />
+        <div key={i}>
+          <Skeleton variant="text" className="w-full h-6" />
+        </div>
       ))}
     </div>
   );

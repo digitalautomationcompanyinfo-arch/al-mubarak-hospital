@@ -1,0 +1,864 @@
+[
+  {
+    "slide_number": 1,
+    "texts": [
+      {
+        "text": "نبدة عن المستشفى",
+        "font": {
+          "size_pt": 39.0,
+          "color": "FF0000"
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 809171,
+        "top": 2467429,
+        "width": 10515600,
+        "height": 4005942
+      },
+      {
+        "text": "تاريخ التأسيس : 2012م",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 809171,
+        "top": 2467429,
+        "width": 10515600,
+        "height": 4005942
+      },
+      {
+        "text": "تاريخ الإفتتاح : 2017م",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 809171,
+        "top": 2467429,
+        "width": 10515600,
+        "height": 4005942
+      },
+      {
+        "text": "العنوان : مدينة كسلا – حي الجسر ( مربع 2 ) جوار مسجد شروني",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 809171,
+        "top": 2467429,
+        "width": 10515600,
+        "height": 4005942
+      },
+      {
+        "text": "تدرج إسم مستشفى المبارك التخصصي : مستوصف المبارك مارس 2017 حتى فبراير 2021م  ثم  مستشفى المبارك فبراير 2021م حتى فبراير 2024م ثم مستشفى المبارك التخصصي من فبراير 2024م حتى تاريخة .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 809171,
+        "top": 2467429,
+        "width": 10515600,
+        "height": 4005942
+      },
+      {
+        "text": "السعة الإستيعابية للمستشفى : عدد 35 غرفة بمختلف تقسيماتها وعدد 6 عنابر تنويم بسعة 20 سرير و حضانة حديثي الولادة بسعة 5 حضانات للأطفال الخدج و عدد 10 أسرة لحديثي الولادة .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 809171,
+        "top": 2467429,
+        "width": 10515600,
+        "height": 4005942
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide1_img1.png",
+        "content_type": "image/png",
+        "width_px": 1022,
+        "height_px": 226,
+        "shape_left_emu": 1897062,
+        "shape_top_emu": 481073,
+        "shape_width_emu": 7958137,
+        "shape_height_emu": 1760364,
+        "file_size": 71311
+      }
+    ],
+    "shapes_count": 2,
+    "has_notes": false
+  },
+  {
+    "slide_number": 2,
+    "texts": [
+      {
+        "text": "يعد مستشفى المبارك التخصصي أحد أعمدة منافذ تقديم الخدمات الصحية و الطبية و العلاجية بولاية كسلا حيث تم إفتتاح مستشفى المبارك التخصصي بمارس 2017م  بسعة إستيعابية 14 غرفة و عنبر بسعة 4 سراير و كانت طبيعة نشاط مستشفى المبارك التخصصي في جانب مجمع عيادات طبية تشمل تخصص أمراض النساء و التوليد و العقم و الخصوبة بقيادة مديرها العام و مالك الصرح د/ عبدالرحمن المبارك إستشاري أمراض النساء و التوليد و العقم و جراحة المناظير أيضا كانت عيادة جراحة العظام و الاصابات، بالإضافة لقسم العمليات حيث كانت تجرى عدد من العمليات النوعية في مجال النساء و التوليد مثل العمليات القيصرية و عمليات إستصال الرحم و إستئصال الاورام الخبيثة و عمليات المناظير لفتح الأنابيب للمساعدة في حدوث الحمل و غيرها من العمليات المعقدة الأخرى ، و في مجال جراحة العظام كانت تتم عمليات تثبيت المساطر و المخروقة و غيرها من العمليات المعقدة ، وأيضا هناك قسم الأشعة السينية فمنذ بداية إفتتاح المستشفى كان القسم و لا زال يعمل بكفاءة عالية ، قسم المعمل حيث تم تجهيز المعمل بأحدث الاجهزة المعملية المتطورة و يشمل عدة فحوصات هرمونية، أيضا قسم الصيدلية .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "فكرة عامة عن مستشفى المبارك التخصصي",
+        "font": {
+          "size_pt": 28.0,
+          "color": "FFFFFF"
+        },
+        "shape_name": "Title 1",
+        "left": 609600,
+        "top": 152400,
+        "width": 10972800,
+        "height": 1219200
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide2_img2.png",
+        "content_type": "image/png",
+        "width_px": 707,
+        "height_px": 156,
+        "shape_left_emu": 691694,
+        "shape_top_emu": 700314,
+        "shape_width_emu": 2936875,
+        "shape_height_emu": 649645,
+        "file_size": 40160
+      }
+    ],
+    "shapes_count": 3,
+    "has_notes": false
+  },
+  {
+    "slide_number": 3,
+    "texts": [
+      {
+        "text": "و في عام 2021م تمت إضافة عيادة إختصاصي زائر اذ تقوم هذة العيادة بإستقطاب الاستشاريين و الإختصاصيين ذوي التخصصات الدقيقة و النادرة التي كانت ترهق المواطن للحصول على هذة الخدمة إذ يتطلب من السفر إما للعاصمة أو مدني و بفضل الله إذ قمنا بهذه النقلة من أجل توطين هذه العيادات في كسلا لتسهيل للمواطن و من هذه العيادات نذكر عيادة جراحة المخ و الأعصاب و جراحة المسالك البولية و زراعة الكلى و المناظير  و غيرها .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 580572,
+        "top": 1480457,
+        "width": 10972800,
+        "height": 3425371
+      },
+      {
+        "text": "و مع تطور العالم و تقدمة في مجال الصحة كان إلزاما على مستشفى المبارك التخصصي أن تواكب هذا التطور ففي عام 2022م و مع الشراكات الذكية مع البنوك مثل بنك أم درمان الوطني و غيرها من البنوك الأخرى  تم إفتتاح قسم الأشعة المقطعية إذ تعد هذة الأشعة من أحدث أنواع الأجهزة و تساعد المريض في الكشف عن كل الأورام و الأمراض الخبيثة وتعمل على مدار ال 24 ساعة لتوفير هذة الخدمة للمواطن",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 580572,
+        "top": 1480457,
+        "width": 10972800,
+        "height": 3425371
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide3_img3.png",
+        "content_type": "image/png",
+        "width_px": 707,
+        "height_px": 156,
+        "shape_left_emu": 691694,
+        "shape_top_emu": 555171,
+        "shape_width_emu": 2936875,
+        "shape_height_emu": 649645,
+        "file_size": 40160
+      }
+    ],
+    "shapes_count": 2,
+    "has_notes": false
+  },
+  {
+    "slide_number": 4,
+    "texts": [
+      {
+        "text": "وأيضا شهد هذا العام توسعة للمستشفى بإفتتاح قسم الطوارئ و قسم الإصابات إذ يعد من أهم الأقسام الموجودة في المستشفى و الذي يتم فيه إستقبال جميع الحالات الحرجة و الاصابات و أيضا بزيادة السعة الاستيعابية ليصبح عدد الغرف 26 غرفة و 3 عنابر تنويم .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 3309257
+      },
+      {
+        "text": "وفي نوفمبر 2022م تم إفتتاح أول معمل للأنسجة المريضة و الخلايا االسرطانية في ولاية كسلا بمستشفى المبارك من أجل توطين هذه الخدمة في الولاية بنسبة تشغيلية وصلت ل 100% .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 3309257
+      },
+      {
+        "text": "و تعد مستشفى المبارك التخصصي من المستشفيات الرائدة في الولايات الشرقية في المجال الطبي و العلاجي و إستخدام أحدث التقنيات الموجودة في السودان في المجال الطبي .",
+        "font": {},
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 3309257
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide4_img4.png",
+        "content_type": "image/png",
+        "width_px": 707,
+        "height_px": 156,
+        "shape_left_emu": 691694,
+        "shape_top_emu": 700314,
+        "shape_width_emu": 2936875,
+        "shape_height_emu": 649645,
+        "file_size": 40160
+      }
+    ],
+    "shapes_count": 2,
+    "has_notes": false
+  },
+  {
+    "slide_number": 5,
+    "texts": [
+      {
+        "text": "أ/ مجمع العيادات التخصصية ، وتضم :",
+        "font": {
+          "size_pt": 43.0,
+          "bold": true
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "1/ عيادة أمراض النساء و التوليد",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "2/ عيادة طب و صحة الطفل",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "3/ عيادة جراحة المخ و الأعصاب",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "4/ عيادة الجراحة العامة و جراحة الجهاز الهضمي و القولون و المناظير",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "5/ عيادة جراحة المسالك البولية و زراعة الكلى",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "6/ عيادة جراحة العظام و الإصابات",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "7/ عيادة الباطنية و أمراض الكلى",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "8/ عيادة المناعة السريرية و الروماتيزم و الحساسية",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "9/ عيادة أمراض الدم و النخاع الشوكي",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "10/ عيادة الأمراض الجلدية و التناسلية و التجميل",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "11/ عيادة جراحة التجميل و الترميم و الحروق",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "12/ عيادة التخدير و الألم",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "13/ عيادة جراحة الأطفال والمسالك البولية أطفال",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "14/عيادة جراحة الوجة والفكين",
+        "font": {
+          "size_pt": 33.0
+        },
+        "shape_name": "Content Placeholder 2",
+        "left": 609600,
+        "top": 1524000,
+        "width": 10972800,
+        "height": 4572000
+      },
+      {
+        "text": "أقسام مستشفى المبارك التخصصي :",
+        "font": {
+          "size_pt": 32.0,
+          "color": "FF0000"
+        },
+        "shape_name": "Title 1",
+        "left": 609600,
+        "top": 152400,
+        "width": 10972800,
+        "height": 1219200
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide5_img5.png",
+        "content_type": "image/png",
+        "width_px": 707,
+        "height_px": 156,
+        "shape_left_emu": 691694,
+        "shape_top_emu": 700314,
+        "shape_width_emu": 2936875,
+        "shape_height_emu": 649645,
+        "file_size": 40160
+      }
+    ],
+    "shapes_count": 3,
+    "has_notes": false
+  },
+  {
+    "slide_number": 6,
+    "texts": [
+      {
+        "text": "الصيدلية",
+        "font": {
+          "size_pt": 66.0
+        },
+        "shape_name": "Title 2",
+        "left": 609600,
+        "top": 152400,
+        "width": 10972800,
+        "height": 1219200
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide6_img6.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1020,
+        "height_px": 768,
+        "shape_left_emu": 530717,
+        "shape_top_emu": 1697677,
+        "shape_width_emu": 5436710,
+        "shape_height_emu": 4151580,
+        "file_size": 83679
+      }
+    ],
+    "shapes_count": 3,
+    "has_notes": false
+  },
+  {
+    "slide_number": 7,
+    "texts": [
+      {
+        "text": "المعمل",
+        "font": {
+          "size_pt": 54.0
+        },
+        "shape_name": "Title 2",
+        "left": 609600,
+        "top": 152400,
+        "width": 10972800,
+        "height": 1219200
+      }
+    ],
+    "images": [],
+    "shapes_count": 2,
+    "has_notes": false
+  },
+  {
+    "slide_number": 8,
+    "texts": [
+      {
+        "text": "الحضانة",
+        "font": {
+          "size_pt": 60.0
+        },
+        "shape_name": "Title 2",
+        "left": 609600,
+        "top": 152400,
+        "width": 10972800,
+        "height": 1219200
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide8_img7.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 8073544,
+        "shape_top_emu": 1683654,
+        "shape_width_emu": 3352805,
+        "shape_height_emu": 2235203,
+        "file_size": 37033
+      },
+      {
+        "filename": "slide8_img8.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 845,
+        "shape_left_emu": 4510407,
+        "shape_top_emu": 1659484,
+        "shape_width_emu": 2999024,
+        "shape_height_emu": 2346459,
+        "file_size": 50100
+      },
+      {
+        "filename": "slide8_img9.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 430014,
+        "shape_top_emu": 1446627,
+        "shape_width_emu": 3909758,
+        "shape_height_emu": 2606505,
+        "file_size": 49851
+      },
+      {
+        "filename": "slide8_img10.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 749527,
+        "shape_top_emu": 4238170,
+        "shape_width_emu": 3302795,
+        "shape_height_emu": 2201863,
+        "file_size": 39815
+      },
+      {
+        "filename": "slide8_img11.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 721,
+        "shape_left_emu": 4465185,
+        "shape_top_emu": 4352309,
+        "shape_width_emu": 2951615,
+        "shape_height_emu": 1970476,
+        "file_size": 32443
+      }
+    ],
+    "shapes_count": 7,
+    "has_notes": false
+  },
+  {
+    "slide_number": 9,
+    "texts": [],
+    "images": [
+      {
+        "filename": "slide9_img12.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 864,
+        "shape_left_emu": 2766106,
+        "shape_top_emu": 3959181,
+        "shape_width_emu": 2952524,
+        "shape_height_emu": 2064248,
+        "file_size": 87500
+      },
+      {
+        "filename": "slide9_img13.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1018,
+        "height_px": 767,
+        "shape_left_emu": 6530295,
+        "shape_top_emu": 3893025,
+        "shape_width_emu": 2783027,
+        "shape_height_emu": 2096839,
+        "file_size": 69980
+      },
+      {
+        "filename": "slide9_img14.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 748620,
+        "shape_top_emu": 1736649,
+        "shape_width_emu": 2952524,
+        "shape_height_emu": 1968349,
+        "file_size": 38883
+      },
+      {
+        "filename": "slide9_img15.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 721,
+        "shape_left_emu": 4333648,
+        "shape_top_emu": 1738679,
+        "shape_width_emu": 2952524,
+        "shape_height_emu": 1971083,
+        "file_size": 49994
+      },
+      {
+        "filename": "slide9_img16.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1019,
+        "height_px": 767,
+        "shape_left_emu": 7933418,
+        "shape_top_emu": 1686855,
+        "shape_width_emu": 2785761,
+        "shape_height_emu": 2096839,
+        "file_size": 66968
+      }
+    ],
+    "shapes_count": 6,
+    "has_notes": false
+  },
+  {
+    "slide_number": 10,
+    "texts": [],
+    "images": [
+      {
+        "filename": "slide10_img17.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1280,
+        "height_px": 958,
+        "shape_left_emu": 478971,
+        "shape_top_emu": 2325233,
+        "shape_width_emu": 3802743,
+        "shape_height_emu": 2846115,
+        "file_size": 117495
+      },
+      {
+        "filename": "slide10_img18.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1020,
+        "height_px": 768,
+        "shape_left_emu": 4260946,
+        "shape_top_emu": 2302548,
+        "shape_width_emu": 3721911,
+        "shape_height_emu": 2802381,
+        "file_size": 48664
+      }
+    ],
+    "shapes_count": 4,
+    "has_notes": false
+  },
+  {
+    "slide_number": 11,
+    "texts": [],
+    "images": [
+      {
+        "filename": "slide11_img19.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 813,
+        "height_px": 1080,
+        "shape_left_emu": 4521071,
+        "shape_top_emu": 2229778,
+        "shape_width_emu": 2750589,
+        "shape_height_emu": 3653919,
+        "file_size": 65159
+      },
+      {
+        "filename": "slide11_img20.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 700,
+        "height_px": 1020,
+        "shape_left_emu": 1880140,
+        "shape_top_emu": 2225369,
+        "shape_width_emu": 2488664,
+        "shape_height_emu": 3626339,
+        "file_size": 41562
+      }
+    ],
+    "shapes_count": 4,
+    "has_notes": false
+  },
+  {
+    "slide_number": 12,
+    "texts": [
+      {
+        "text": "القسم العمليات",
+        "font": {
+          "size_pt": 32.0,
+          "bold": true,
+          "color": "FF0000"
+        },
+        "shape_name": "Title 1",
+        "left": 881743,
+        "top": 348343,
+        "width": 10515600,
+        "height": 1843314
+      }
+    ],
+    "images": [
+      {
+        "filename": "slide12_img21.png",
+        "content_type": "image/png",
+        "width_px": 707,
+        "height_px": 156,
+        "shape_left_emu": 648151,
+        "shape_top_emu": 250371,
+        "shape_width_emu": 2936875,
+        "shape_height_emu": 649645,
+        "file_size": 40160
+      },
+      {
+        "filename": "slide12_img22.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 534571,
+        "shape_top_emu": 3477008,
+        "shape_width_emu": 3742007,
+        "shape_height_emu": 2986057,
+        "file_size": 70955
+      },
+      {
+        "filename": "slide12_img23.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 4431324,
+        "shape_top_emu": 3383112,
+        "shape_width_emu": 3854548,
+        "shape_height_emu": 3078875,
+        "file_size": 63076
+      }
+    ],
+    "shapes_count": 5,
+    "has_notes": false
+  },
+  {
+    "slide_number": 13,
+    "texts": [],
+    "images": [
+      {
+        "filename": "slide13_img24.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 489,
+        "height_px": 357,
+        "shape_left_emu": 8460489,
+        "shape_top_emu": 4470167,
+        "shape_width_emu": 2033341,
+        "shape_height_emu": 1483586,
+        "file_size": 66414
+      },
+      {
+        "filename": "slide13_img25.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 3599543,
+        "shape_top_emu": 4511309,
+        "shape_width_emu": 2311984,
+        "shape_height_emu": 1541323,
+        "file_size": 50346
+      },
+      {
+        "filename": "slide13_img26.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1028,
+        "height_px": 504,
+        "shape_left_emu": 1190930,
+        "shape_top_emu": 4530393,
+        "shape_width_emu": 2321528,
+        "shape_height_emu": 1464002,
+        "file_size": 21337
+      },
+      {
+        "filename": "slide13_img27.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 779,
+        "shape_left_emu": 6139542,
+        "shape_top_emu": 4513767,
+        "shape_width_emu": 2142844,
+        "shape_height_emu": 1545626,
+        "file_size": 55817
+      },
+      {
+        "filename": "slide13_img28.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 721,
+        "shape_left_emu": 2743200,
+        "shape_top_emu": 2675306,
+        "shape_width_emu": 2202129,
+        "shape_height_emu": 1470125,
+        "file_size": 42591
+      },
+      {
+        "filename": "slide13_img29.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 721,
+        "shape_left_emu": 373531,
+        "shape_top_emu": 2709192,
+        "shape_width_emu": 2268535,
+        "shape_height_emu": 1514457,
+        "file_size": 41154
+      },
+      {
+        "filename": "slide13_img30.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 7104069,
+        "shape_top_emu": 2576278,
+        "shape_width_emu": 2471059,
+        "shape_height_emu": 1647372,
+        "file_size": 44449
+      },
+      {
+        "filename": "slide13_img31.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 333827,
+        "shape_top_emu": 870852,
+        "shape_width_emu": 2220670,
+        "shape_height_emu": 1644952,
+        "file_size": 64699
+      },
+      {
+        "filename": "slide13_img32.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 496,
+        "height_px": 416,
+        "shape_left_emu": 5036456,
+        "shape_top_emu": 2586818,
+        "shape_width_emu": 2061028,
+        "shape_height_emu": 1728974,
+        "file_size": 44877
+      },
+      {
+        "filename": "slide13_img33.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 9448797,
+        "shape_top_emu": 595025,
+        "shape_width_emu": 2438401,
+        "shape_height_emu": 1625600,
+        "file_size": 75011
+      },
+      {
+        "filename": "slide13_img34.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 720,
+        "shape_left_emu": 7111993,
+        "shape_top_emu": 624111,
+        "shape_width_emu": 2438399,
+        "shape_height_emu": 1625600,
+        "file_size": 24838
+      },
+      {
+        "filename": "slide13_img35.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 822,
+        "shape_left_emu": 4934843,
+        "shape_top_emu": 691825,
+        "shape_width_emu": 2177144,
+        "shape_height_emu": 1657049,
+        "file_size": 60068
+      },
+      {
+        "filename": "slide13_img36.jpg",
+        "content_type": "image/jpeg",
+        "width_px": 1080,
+        "height_px": 781,
+        "shape_left_emu": 2685127,
+        "shape_top_emu": 783766,
+        "shape_width_emu": 2314714,
+        "shape_height_emu": 1673881,
+        "file_size": 69176
+      }
+    ],
+    "shapes_count": 14,
+    "has_notes": false
+  },
+  {
+    "slide_number": 14,
+    "texts": [],
+    "images": [],
+    "shapes_count": 2,
+    "has_notes": false
+  }
+]

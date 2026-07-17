@@ -1,14 +1,29 @@
 import { Router, Request, Response } from "express";
+import rateLimit from "express-rate-limit";
 import { getGeminiClient } from "../gemini";
+import { requireAuth } from "./auth";
+import { pressReleaseSchema } from "../../src/lib/validation";
 
 const router = Router();
 
-router.post("/", async (req: Request, res: Response) => {
+const aiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 15,
+  message: { error: "تم تجاوز الحد الأقصى لاستخدام الذكاء الاصطناعي. يرجى الانتظار دقيقتين." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+router.post("/", requireAuth, aiLimiter, async (req: Request, res: Response) => {
   try {
-    const { topic, keyPoints, tone } = req.body;
-    if (!topic) {
-      return res.status(400).json({ error: "الموضوع مطلوب لإنشاء البيان الصحفي" });
+    const parseResult = pressReleaseSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      return res.status(400).json({
+        error: parseResult.error.issues.map((i) => i.message).join(" | "),
+      });
     }
+
+    const { topic, keyPoints, tone } = parseResult.data;
 
     const client = getGeminiClient();
     const prompt = `

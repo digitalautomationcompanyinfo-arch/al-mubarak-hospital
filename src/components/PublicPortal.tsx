@@ -1,26 +1,36 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { NewsArticle, Department, PatientFeedback } from "../types";
+import { NewsArticle, Department, PatientFeedback, Doctor } from "../types";
 import DynamicIcon, { IconName } from "./DynamicIcon";
+import TrainingSection from "./TrainingSection";
+import ScrollReveal from "./ScrollReveal";
+import AnimatedCounter from "./AnimatedCounter";
 import { translations } from "../data/translations";
 import { feedbackSchema } from "../lib/validation";
+import PhotoGallery from "./PhotoGallery";
+import DoctorsSection from "./DoctorsSection";
+import { initialDoctors } from "../data/mockData";
 
 interface PublicPortalProps {
   news: NewsArticle[];
   departments: Department[];
+  doctors?: Doctor[];
   onAddFeedback: (feedback: Omit<PatientFeedback, "id" | "date" | "status">) => void;
   activeSubTab: string;
   setActiveSubTab: (tab: string) => void;
   lang: "ar" | "en";
+  onBookClick?: () => void;
 }
 
 export default function PublicPortal({
   news,
   departments,
+  doctors = initialDoctors,
   onAddFeedback,
   activeSubTab,
   setActiveSubTab,
-  lang
+  lang,
+  onBookClick
 }: PublicPortalProps) {
   const t = translations[lang];
 
@@ -67,8 +77,8 @@ export default function PublicPortal({
         "Use insect repellent creams on exposed skin during high-activity hours."
       ],
       kassalaAdvice: lang === "ar"
-        ? "نظراً لمجاورة حي الجسر لمجرى نهر القاش، تتضاعف أهمية ردم المستنقعات المنزلية والتعاون مع فرق الرش والتعقيم التابعة لوزارة الصحة والمستشفى."
-        : "Due to Al-Gisr's proximity to the Gash Riverbed, household swamp clearance and collaboration with spray teams are crucial."
+        ? "تتضاعف أهمية ردم المستنقعات المنزلية والتعاون مع فرق الرش والتعقيم التابعة لوزارة الصحة والمستشفى للوقاية من نواقل الأمراض."
+        : "Household swamp clearance and collaboration with spray teams are crucial for vector prevention."
     },
     {
       id: "tip-2",
@@ -190,7 +200,7 @@ export default function PublicPortal({
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
-      result.error.errors.forEach((err) => {
+      result.error.issues.forEach((err) => {
         const field = err.path[0] as string;
         if (!fieldErrors[field]) {
           fieldErrors[field] = err.message;
@@ -265,7 +275,7 @@ export default function PublicPortal({
         <div className="space-y-12 animate-fade-in">
           
           {/* Hero Section */}
-          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-burgundy-950 via-burgundy-850 to-[#3D0C0C] text-white p-8 md:p-16 shadow-xl border border-burgundy-900/10">
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-burgundy-950 via-burgundy-850 to-[#3D0C0C] text-white p-8 md:p-16 shadow-xl border border-burgundy-900/10 hero-animated-gradient">
             {/* Elegant Geometric Background Accents */}
             <div className="absolute -bottom-20 -right-20 w-96 h-96 border-[40px] border-white/[0.03] rounded-full pointer-events-none"></div>
             <div className="absolute top-10 right-10 w-20 h-20 border border-white/10 rounded-3xl pointer-events-none rotate-12"></div>
@@ -290,11 +300,11 @@ export default function PublicPortal({
                 
                 <div className="flex flex-wrap gap-3.5 pt-4">
                   <button
-                    onClick={() => setActiveSubTab("contact")}
+                    onClick={() => onBookClick ? onBookClick() : setActiveSubTab("contact")}
                     className="px-6 py-3 bg-white hover:bg-burgundy-100 text-burgundy-850 font-bold rounded-xl shadow-md transition-all flex items-center gap-2 cursor-pointer text-xs md:text-sm"
                   >
-                    <DynamicIcon name="MessageSquare" size={16} />
-                    <span>{t.heroContactBtn}</span>
+                    <DynamicIcon name="Calendar" size={16} />
+                    <span>{lang === "ar" ? "حجز موعد بالعيادات" : "Book Appointment"}</span>
                   </button>
                   <button
                     onClick={() => setActiveSubTab("news")}
@@ -313,14 +323,13 @@ export default function PublicPortal({
                 
                 <div className="relative group overflow-hidden rounded-2xl border-4 border-white/10 shadow-2xl transition-transform duration-500 hover:scale-[1.02] w-full max-w-[420px] aspect-[4/3] bg-burgundy-950/40">
                   <img
-                    src="https://images.unsplash.com/photo-1586773860418-d3b3202815e1?auto=format&fit=crop&w=800&q=80"
+                    src="/pptx_images/slide10_img17.jpg"
                     alt={lang === "ar" ? "مستشفى المبارك التخصصي" : "Al-Mubarak Specialized Hospital"}
-                    referrerPolicy="no-referrer"
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   {/* Subtle vignette/gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-burgundy-950/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none"></div>
                   
                   {/* Glassmorphic overlay badge inside image */}
                   <div className="absolute bottom-4 left-4 right-4 p-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl flex items-center gap-3">
@@ -332,7 +341,7 @@ export default function PublicPortal({
                         {lang === "ar" ? "رعاية طبية فائقة" : "PREMIUM CARE"}
                       </p>
                       <p className="text-xs font-bold text-white">
-                        {lang === "ar" ? "حي الجسر، ولاية كسلا" : "Al-Gisr, Kassala State"}
+                        {lang === "ar" ? "خدمات طبية تخصصية" : "Specialized Medical Services"}
                       </p>
                     </div>
                   </div>
@@ -343,6 +352,7 @@ export default function PublicPortal({
           </section>
 
           {/* Quick Stats Bar */}
+          <ScrollReveal direction="fade-up" delay={100}>
           <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
               { label: t.homeStat1Label, val: t.homeStat1Val, bg: "bg-white border border-slate-100 shadow-sm", txtColor: "text-burgundy-850", icon: "Users", iconBg: "bg-burgundy-100 text-burgundy-800" },
@@ -356,7 +366,7 @@ export default function PublicPortal({
               >
                 <div className={`space-y-1 ${alignClass}`}>
                   <p className="text-[10px] md:text-xs opacity-75 font-semibold text-slate-500 text-inherit">{stat.label}</p>
-                  <h3 className="text-lg md:text-2xl font-black tracking-tight">{stat.val}</h3>
+                  <h3 className="text-lg md:text-2xl font-black tracking-tight"><AnimatedCounter target={stat.val} /></h3>
                 </div>
                 <div className={`p-3 rounded-xl shrink-0 ${stat.iconBg}`}>
                   <DynamicIcon name={stat.icon as IconName} size={20} />
@@ -364,8 +374,10 @@ export default function PublicPortal({
               </div>
             ))}
           </section>
+          </ScrollReveal>
 
           {/* Location & Headquarters Section */}
+          <ScrollReveal direction="fade-up" delay={150}>
           <section className="grid md:grid-cols-12 gap-8 items-center bg-white p-6 md:p-10 rounded-3xl border border-slate-100 shadow-md">
             <div className={`md:col-span-7 space-y-6 ${alignClass}`}>
               <span className="text-burgundy-700 font-bold text-xs tracking-wider flex items-center gap-1.5 justify-start">
@@ -457,8 +469,51 @@ export default function PublicPortal({
               </div>
             </div>
           </section>
+          </ScrollReveal>
+
+          {/* Hospital Timeline Section */}
+          <ScrollReveal direction="fade-up" delay={100}>
+          <section className="bg-white border border-slate-100 rounded-3xl p-6 md:p-10 shadow-md space-y-8">
+            <div className="text-center max-w-2xl mx-auto space-y-3">
+              <span className="text-burgundy-800 font-extrabold text-xs uppercase tracking-widest bg-burgundy-100 px-3.5 py-1 rounded-full border border-burgundy-200">
+                {t.timelineSubtitle}
+              </span>
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight">
+                {t.timelineTitle}
+              </h2>
+              <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium">
+                {t.timelineDesc}
+              </p>
+            </div>
+
+            <div className="relative border-s-2 border-burgundy-200 ms-4 md:ms-8 space-y-8 py-2">
+              {[
+                { year: lang === "ar" ? "2012م" : "2012", title: t.timelineFoundation, desc: t.timelineFoundationDesc, icon: "Building" },
+                { year: lang === "ar" ? "مارس 2017م" : "March 2017", title: t.timelineOpening, desc: t.timelineOpeningDesc, icon: "HeartPulse" },
+                { year: lang === "ar" ? "2021م" : "2021", title: t.timelineExpansion2021, desc: t.timelineExpansion2021Desc, icon: "Stethoscope" },
+                { year: lang === "ar" ? "2022م" : "2022", title: t.timelineCT2022, desc: t.timelineCT2022Desc, icon: "Scan" },
+                { year: lang === "ar" ? "فبراير 2024م" : "February 2024", title: t.timelineSpecialized, desc: t.timelineSpecializedDesc, icon: "Award" },
+                { year: lang === "ar" ? "الحاضر" : "Present Day", title: t.timelinePresent, desc: t.timelinePresentDesc, icon: "Sparkles" },
+              ].map((item, idx) => (
+                <div key={idx} className="relative ps-6 md:ps-8">
+                  <div className="absolute -left-[17px] rtl:-right-[17px] rtl:left-auto top-1.5 w-8 h-8 rounded-full bg-burgundy-900 text-white flex items-center justify-center shadow-md border-2 border-white">
+                    <DynamicIcon name={item.icon as IconName} size={14} />
+                  </div>
+                  <div className="bg-slate-50 p-4 md:p-5 rounded-2xl border border-slate-200/70 hover:shadow-md transition-all space-y-1">
+                    <span className="text-xs font-black text-burgundy-700 bg-burgundy-100 px-2.5 py-0.5 rounded-full inline-block">
+                      {item.year}
+                    </span>
+                    <h3 className="text-base font-extrabold text-slate-900 pt-1">{item.title}</h3>
+                    <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+          </ScrollReveal>
 
           {/* Health Awareness Section */}
+          <ScrollReveal direction="fade-up" delay={100}>
           <section id="health-awareness" className="bg-slate-50/50 border border-slate-200/60 rounded-3xl p-6 md:p-10 shadow-sm space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <span className="text-burgundy-800 font-extrabold text-xs uppercase tracking-widest bg-burgundy-100 px-3.5 py-1 rounded-full">
@@ -487,12 +542,12 @@ export default function PublicPortal({
                         : "bg-white border-slate-100 text-slate-700 hover:bg-slate-50"
                     }`}
                   >
-                    <div className="flex items-center gap-3 shrink-0">
+                    <div className="flex items-center gap-3 min-w-0">
                       <div className={`p-2 rounded-xl shrink-0 ${activeCuratedIndex === idx ? "bg-white/10 text-white" : "bg-burgundy-100 text-burgundy-800"}`}>
                         <DynamicIcon name={tip.icon as IconName} size={18} />
                       </div>
-                      <div className={alignClass}>
-                        <p className="text-xs md:text-sm font-bold">{tip.title}</p>
+                      <div className={`${alignClass} min-w-0`}>
+                        <p className="text-xs md:text-sm font-bold break-words">{tip.title}</p>
                         <p className={`text-[10px] font-semibold opacity-75 ${activeCuratedIndex === idx ? "text-slate-300" : "text-slate-400"}`}>
                           {tip.category}
                         </p>
@@ -552,7 +607,7 @@ export default function PublicPortal({
                   </div>
                   <div className={`space-y-1 ${alignClass}`}>
                     <p className="text-[10px] font-black text-amber-800 tracking-wider">
-                      {lang === "ar" ? "هام لمجتمع ولاية كسلا وحي الجسر" : "KASSALA COMMUNITY NOTICE"}
+                      {lang === "ar" ? "إرشاد وقائي مجتمعي" : "COMMUNITY HEALTH NOTICE"}
                     </p>
                     <p className="text-xs text-amber-700 leading-relaxed">
                       {curatedTips[activeCuratedIndex].kassalaAdvice}
@@ -690,7 +745,7 @@ export default function PublicPortal({
                             </div>
                             <div className={`space-y-1 ${alignClass}`}>
                               <p className="text-[10px] font-black text-amber-400 tracking-wider">
-                                {lang === "ar" ? "ملائمة خاصة ببيئة كسلا وحي الجسر" : "KASSALA ENVIRONMENTAL TAILORING"}
+                                {lang === "ar" ? "إرشاد صحي وقائي" : "ENVIRONMENTAL TAILORING"}
                               </p>
                               <p className="text-xs text-amber-300 leading-relaxed font-normal">
                                 {generatedTip.kassalaAdvice}
@@ -711,26 +766,83 @@ export default function PublicPortal({
             </div>
 
           </section>
+          </ScrollReveal>
 
-          {/* Department Message from Communication Officer */}
-          <section className="bg-gradient-to-br from-burgundy-950 via-[#1A0505] to-burgundy-850 text-white rounded-3xl p-6 md:p-10 relative overflow-hidden flex flex-col md:flex-row gap-6 items-center shadow-lg border border-burgundy-950/20">
-            <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.02),transparent)] pointer-events-none"></div>
-            <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white shrink-0 shadow-md">
-              <DynamicIcon name="Megaphone" size={26} className="text-burgundy-300" />
+          {/* Clinical Faculty & Doctors Section */}
+          <ScrollReveal direction="fade-up" delay={150}>
+            <DoctorsSection
+              doctors={doctors}
+              lang={lang}
+              onBookClick={() => onBookClick ? onBookClick() : setActiveSubTab("contact")}
+            />
+          </ScrollReveal>
+
+          {/* Hospital Director & Management Statement */}
+          <ScrollReveal direction="fade-up" delay={200}>
+          <section className="bg-gradient-to-br from-burgundy-950 via-burgundy-900 to-slate-900 text-white rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl border border-burgundy-850/40">
+            <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">
+              {/* Doctor Photo */}
+              <div className="md:col-span-4 flex justify-center">
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-amber-400/30 shadow-2xl shrink-0 bg-slate-800">
+                  <img
+                    src="/pptx_images/slide10_img18.jpg"
+                    alt="د. عبدالرحمن المبارك"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"></div>
+                </div>
+              </div>
+
+              {/* Message Content */}
+              <div className={`md:col-span-8 space-y-4 ${alignClass}`}>
+                <span className="px-3.5 py-1 bg-amber-400/10 text-amber-300 text-xs font-bold rounded-full border border-amber-400/20 inline-flex items-center gap-1.5">
+                  <DynamicIcon name="Award" size={14} />
+                  {lang === "ar" ? "رؤية الإدارة والمدير العام" : "Management & Director's Statement"}
+                </span>
+                
+                <h3 className="text-xl md:text-2xl font-black text-white leading-tight">
+                  {lang === "ar" 
+                    ? "التزامنا برعاية إنسانية وتوطين أرقى الخدمات الطبية بولاية كسلا"
+                    : "Our Commitment to Humane Care & Localizing Advanced Medicine in Kassala"}
+                </h3>
+                
+                <p className="text-slate-300 leading-relaxed text-xs md:text-sm font-light italic">
+                  {lang === "ar"
+                    ? "«منذ تأسيس مستوصف المبارك عام 2017م وحتى افتتاحه رسمياً كمستشفى تخصصي متكامل عام 2024م، كان هدفنا الأسمى دائماً هو تقديم خدمة علاجية ورعاية إنسانية تليق بالمواطن، وتوفير الأجهزة الدقيقة كالأشعة المقطعية ومعامل الأنسجة السرطانية وحضانات الخدج لتوفير مشقة السفر وخدمة أهالي شرق السودان»"
+                    : "“Since founding Al-Mubarak Clinic in 2017 to its official inauguration as a full specialized hospital in 2024, our highest mission has always been rendering dignified medical care, introducing CT scans, cancer pathology labs, and NICUs to spare citizens travel burdens.”"}
+                </p>
+
+                <div className="pt-2 border-t border-white/10 flex items-center justify-between">
+                  <div>
+                    <h4 className="text-sm font-extrabold text-amber-300">
+                      {lang === "ar" ? "د. عبدالرحمن المبارك" : "Dr. Abdulrahman Al-Mubarak"}
+                    </h4>
+                    <p className="text-xs text-slate-400 font-medium">
+                      {lang === "ar" ? "المدير العام ومؤسس مستشفى المبارك التخصصي" : "General Director & Founder"}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => onBookClick ? onBookClick() : setActiveSubTab("contact")}
+                    className="px-4 py-2 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5 cursor-pointer"
+                  >
+                    <DynamicIcon name="Phone" size={14} />
+                    <span>{lang === "ar" ? "تواصل معنا" : "Contact Desk"}</span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <div className={`space-y-2 relative z-10 text-center ${alignClass}`}>
-              <h3 className="text-base md:text-xl font-bold text-burgundy-300">
-                {t.wordOfficerTitle}
-              </h3>
-              <p className="text-white/80 leading-relaxed text-xs md:text-sm font-light italic max-w-4xl">
-                {t.wordOfficerBody}
-              </p>
-              <p className="text-[11px] font-bold text-burgundy-500 uppercase tracking-wide">
-                {t.wordOfficerTeam}
-              </p>
-            </div>
+
           </section>
+          </ScrollReveal>
         </div>
+      )}
+
+      {/* GALLERY VIEW */}
+      {activeSubTab === "gallery" && (
+        <PhotoGallery lang={lang} />
       )}
 
       {/* 2. DEPARTMENTS VIEW */}
@@ -738,17 +850,17 @@ export default function PublicPortal({
         <div className="space-y-8 animate-fade-in">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-burgundy-800 font-extrabold text-xs uppercase tracking-widest bg-burgundy-100 px-3.5 py-1 rounded-full">{t.deptSubTitle}</span>
-            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">{t.deptTitle}</h2>
+            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight text-gradient-burgundy">{t.deptTitle}</h2>
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium">
               {t.deptDesc}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {departments.map((dept) => (
+            {departments.map((dept, idx) => (
+              <ScrollReveal key={dept.id} direction="fade-up" delay={idx * 100}>
               <div
-                key={dept.id}
-                className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group card-hover h-full"
               >
                 <div className="space-y-5">
                   {/* Icon Header */}
@@ -785,14 +897,15 @@ export default function PublicPortal({
 
                 <div className="pt-6">
                   <button
-                    onClick={() => setActiveSubTab("contact")}
-                    className="w-full py-2.5 bg-slate-50 hover:bg-burgundy-800 hover:text-white border border-slate-200 hover:border-burgundy-800 text-slate-800 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                    onClick={() => onBookClick ? onBookClick() : setActiveSubTab("contact")}
+                    className="w-full py-2.5 bg-slate-50 hover:bg-burgundy-900 hover:text-white border border-slate-200 hover:border-burgundy-900 text-slate-800 text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm"
                   >
-                    <DynamicIcon name="MessageSquare" size={13} />
-                    <span>{t.deptCTA}</span>
+                    <DynamicIcon name="Calendar" size={14} />
+                    <span>{lang === "ar" ? "حجز موعد بالعيادة" : "Book Clinic Appointment"}</span>
                   </button>
                 </div>
               </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
@@ -803,7 +916,7 @@ export default function PublicPortal({
         <div className="space-y-8 animate-fade-in">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-burgundy-800 font-extrabold text-xs uppercase tracking-widest bg-burgundy-100 px-3.5 py-1 rounded-full">{t.mediaSubTitle}</span>
-            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">{t.mediaTitle}</h2>
+            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight text-gradient-burgundy">{t.mediaTitle}</h2>
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium">
               {t.mediaDesc}
             </p>
@@ -849,10 +962,10 @@ export default function PublicPortal({
           {/* Articles Grid */}
           {filteredNews.length > 0 ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-              {filteredNews.map((article) => (
+              {filteredNews.map((article, idx) => (
+                <ScrollReveal key={article.id} direction="fade-up" delay={idx * 80}>
                 <article
-                  key={article.id}
-                  className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+                  className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full card-hover"
                 >
                   {/* Article Image or Placeholder */}
                   <div className="h-44 w-full bg-slate-100 overflow-hidden relative">
@@ -916,6 +1029,7 @@ export default function PublicPortal({
                     </div>
                   </div>
                 </article>
+                </ScrollReveal>
               ))}
             </div>
           ) : (
@@ -1008,12 +1122,17 @@ export default function PublicPortal({
         </div>
       )}
 
-      {/* 4. CONTACT & PUBLIC FEEDBACK VIEW */}
+      {/* 4. TRAINING & DEVELOPMENT VIEW */}
+      {activeSubTab === "training" && (
+        <TrainingSection lang={lang} />
+      )}
+
+      {/* 5. CONTACT & PUBLIC FEEDBACK VIEW */}
       {activeSubTab === "contact" && (
         <div className="space-y-8 animate-fade-in">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <span className="text-burgundy-800 font-extrabold text-xs uppercase tracking-widest bg-burgundy-100 px-3.5 py-1 rounded-full">{t.contactSubTitle}</span>
-            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight">{t.contactTitle}</h2>
+            <h2 className="text-2xl md:text-4xl font-black text-slate-900 tracking-tight text-gradient-burgundy">{t.contactTitle}</h2>
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed font-medium">
               {t.contactDesc}
             </p>

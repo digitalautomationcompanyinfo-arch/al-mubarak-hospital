@@ -1,7 +1,17 @@
 import { Router, Request, Response } from "express";
+import rateLimit from "express-rate-limit";
 import { getGeminiClient, Type } from "../gemini";
+import { healthTipsSchema } from "../../src/lib/validation";
 
 const router = Router();
+
+const healthTipsLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 30,
+  message: { error: "تم تجاوز الحد الأقصى للاستفسارات الطبية التوعوية. يرجى المحاولة بعد قليل." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
 
 // Fallback tips when Gemini is unavailable
 const fallbackTipsAr = {
@@ -26,14 +36,16 @@ const fallbackTipsEn = {
     "Due to Al-Gisr's proximity to the seasonal Gash River in Kassala, we strongly urge residents to double down on vector control and coordinate with our hospital's ongoing campaigns.",
 };
 
-router.post("/", async (req: Request, res: Response) => {
+router.post("/", healthTipsLimiter, async (req: Request, res: Response) => {
   try {
-    const { topic, lang } = req.body;
-    if (!topic) {
-      return res
-        .status(400)
-        .json({ error: lang === "ar" ? "الموضوع مطلوب" : "Topic is required" });
+    const parseResult = healthTipsSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      return res.status(400).json({
+        error: parseResult.error.issues.map((i) => i.message).join(" | "),
+      });
     }
+
+    const { topic, lang } = parseResult.data;
 
     const client = getGeminiClient();
     const prompt = `

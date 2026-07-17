@@ -41,7 +41,22 @@ import {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
-  LineChart
+  GraduationCap,
+  RotateCcw,
+  Award,
+  Stethoscope,
+  CheckCircle,
+  TrendingUp,
+  Grid3X3,
+  Bed,
+  Pill,
+  Camera,
+  ZoomIn,
+  Image,
+  Scan,
+  FlaskConical,
+  BrainCircuit,
+  Calendar,
 } from "lucide-react";
 
 const iconMap = {
@@ -86,7 +101,22 @@ const iconMap = {
   ChevronLeft,
   ChevronRight,
   ChevronUp,
-  LineChart
+  GraduationCap,
+  RotateCcw,
+  Award,
+  Stethoscope,
+  CheckCircle,
+  TrendingUp,
+  Grid3X3,
+  Bed,
+  Pill,
+  Camera,
+  ZoomIn,
+  Image,
+  Scan,
+  FlaskConical,
+  BrainCircuit,
+  Calendar,
 };
 
 export type IconName = keyof typeof iconMap;

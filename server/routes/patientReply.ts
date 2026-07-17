@@ -1,14 +1,34 @@
 import { Router, Request, Response } from "express";
+import rateLimit from "express-rate-limit";
+import { z } from "zod";
 import { getGeminiClient } from "../gemini";
+import { requireAuth } from "./auth";
 
 const router = Router();
 
-router.post("/", async (req: Request, res: Response) => {
+const patientReplyInputSchema = z.object({
+  inquiryText: z.string().min(5, "نص الرسالة قصير جداً").max(5000, "نص الرسالة طويل جداً"),
+  type: z.string().optional(),
+});
+
+const aiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  message: { error: "تم تجاوز الحد الأقصى لصياغة الردود بالذكاء الاصطناعي. يرجى التريث قليلاً." },
+  standardHeaders: true,
+  legacyHeaders: false,
+});
+
+router.post("/", requireAuth, aiLimiter, async (req: Request, res: Response) => {
   try {
-    const { inquiryText, type } = req.body;
-    if (!inquiryText) {
-      return res.status(400).json({ error: "نص الاستفسار أو الشكوى مطلوب" });
+    const parseResult = patientReplyInputSchema.safeParse(req.body);
+    if (!parseResult.success) {
+      return res.status(400).json({
+        error: parseResult.error.issues.map((i) => i.message).join(" | "),
+      });
     }
+
+    const { inquiryText, type } = parseResult.data;
 
     const client = getGeminiClient();
     const prompt = `

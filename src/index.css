@@ -1,37 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+/* ============================================
+   WORLD-CLASS HOSPITAL WEBSITE DESIGN SYSTEM
+   Al-Mubarak Specialized Hospital - Kassala
+   ============================================ */
+
+/* === CSS Variables / Theme === */
+:root {
+  --color-primary: #3D0C0C;
+  --color-primary-light: #7A2E2E;
+  --color-primary-dark: #1A0505;
+  --color-accent: #0D9488;
+  --color-accent-light: #14B8A6;
+  --color-gold: #B8860B;
+  --color-gold-light: #D4A843;
+  --font-heading: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
-/* Custom scrollbar */
+/* === Smooth scrolling === */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+/* === Custom scrollbar (hospital branded) === */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #FDF9F2;
+  background: #F8F6F0;
+  border-radius: 0;
 }
 ::-webkit-scrollbar-thumb {
-  background: #7A2E2E;
+  background: linear-gradient(180deg, #7A2E2E, #9E4A4A);
   border-radius: 4px;
+  border: 2px solid #F8F6F0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3D0C0C;
+  background: linear-gradient(180deg, #3D0C0C, #7A2E2E);
 }
 
-/* Focus visible styles for accessibility */
+/* === Focus visible styles === */
 :focus-visible {
-  outline: 2px solid #7A2E2E;
+  outline: 2px solid #0D9488;
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 8px;
 }
 
+/* === Theme (Tailwind v4) === */
 @theme {
   --font-sans: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  
+
+  /* Burgundy Palette - Hospital Primary */
   --color-burgundy-950: #1A0505;
   --color-burgundy-900: #3D0C0C;
   --color-burgundy-850: #5C1A1A;
@@ -44,112 +68,93 @@ html {
   --color-burgundy-300: #EAB5B5;
   --color-burgundy-200: #F5D8D8;
   --color-burgundy-100: #FCF0F0;
-  
+
+  /* Beige/Warm Palette - Background */
   --color-beige-50: #FDF9F2;
-  --color-beige-100: #F5EDDD;
-  --color-beige-200: #EAD9BC;
-  --color-beige-300: #D9C09A;
-  --color-beige-400: #C4A578;
-  --color-beige-500: #A88B5E;
-  --color-beige-600: #8B7047;
+  --color-beige-100: #F8F2E5;
+  --color-beige-200: #F0E8D5;
+  --color-beige-300: #E5D9BB;
 
-  --color-red-500: #C0392B;
-  --color-red-600: #A93226;
-  --color-red-700: #8B1A1A;
+  /* Teal/Medical Accent */
+  --color-teal-50: #F0FDFA;
+  --color-teal-100: #CCFBF1;
+  --color-teal-200: #99F6E4;
+  --color-teal-300: #5EEAD4;
+  --color-teal-400: #2DD4BF;
+  --color-teal-500: #14B8A6;
+  --color-teal-600: #0D9488;
+  --color-teal-700: #0F766E;
+  --color-teal-800: #115E59;
+  --color-teal-900: #134E4A;
+
+  /* Gold Accent */
+  --color-gold-50: #FFFDF5;
+  --color-gold-100: #FFF9E0;
+  --color-gold-200: #FFF0B3;
+  --color-gold-300: #FFE680;
+  --color-gold-400: #FFD94D;
+  --color-gold-500: #D4A843;
+  --color-gold-600: #B8860B;
+  --color-gold-700: #8B6508;
+  --color-gold-800: #6B4E06;
+  --color-gold-900: #4A3504;
 }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes scaleUp {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes tickerScroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-33.333%); }
-}
-
-@keyframes tickerScrollReverse {
-  0% { transform: translateX(-33.333%); }
-  100% { transform: translateX(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.3s ease-out forwards;
-}
-
-.animate-scale-up {
-  animation: scaleUp 0.25s ease-out forwards;
-}
-
-/* News Ticker styles */
-.ticker-wrapper {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
-
-.ticker-track {
-  display: inline-flex;
-  animation: tickerScroll 30s linear infinite;
-  will-change: transform;
-}
-
-.ticker-track.ticker-reverse {
-  animation: tickerScrollReverse 30s linear infinite;
-}
-
-.ticker-item {
-  display: inline-block;
-  padding-inline-end: 4rem;
-  flex-shrink: 0;
-}
-
-/* Pause ticker on hover for readability */
-.ticker-wrapper:hover .ticker-track,
-.ticker-wrapper:hover .ticker-track.ticker-reverse {
-  animation-play-state: paused;
-}
-
+/* === Body base styling === */
 body {
-  font-family: var(--font-sans);
-  background: radial-gradient(circle at top, rgba(154, 74, 74, 0.06), transparent 30%),
-    linear-gradient(180deg, #FDF9F2 0%, #F5EDDD 100%);
-  color: #1a1a1a;
+  font-family: var(--font-body);
+  background: #FDF9F2;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(125, 46, 46, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(13, 148, 136, 0.03) 0%, transparent 60%),
+    linear-gradient(180deg, #FDF9F2 0%, #F8F2E5 50%, #F5EDDD 100%);
+  color: #1e1e1e;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
   box-sizing: border-box;
 }
 
+/* === Smooth transitions for interactive elements === */
 button,
 input,
 select,
-textarea {
-  transition: all 180ms ease-in-out;
+textarea,
+a {
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 2px solid rgba(128, 0, 0, 0.35);
+  outline: 2px solid rgba(13, 148, 136, 0.5);
   outline-offset: 2px;
 }
+
+/* ============================================
+   ANIMATIONS KEYFRAMES
+   ============================================ */
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -160,11 +165,63 @@ textarea:focus-visible {
 @keyframes scaleUp {
   from {
     opacity: 0;
-    transform: scale(0.96);
+    transform: scale(0.95);
   }
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(13, 148, 136, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(13, 148, 136, 0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
   }
 }
 
@@ -177,47 +234,350 @@ textarea:focus-visible {
   }
 }
 
+@keyframes tickerScrollReverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow-slide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* === Animation Utility Classes === */
 .animate-fade-in {
-  animation: fadeIn 0.55s ease-out both;
+  animation: fadeIn 0.6s ease-out both;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out both;
 }
 
 .animate-scale-up {
-  animation: scaleUp 0.35s ease-out both;
+  animation: scaleUp 0.4s ease-out both;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.5s ease-out both;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out both;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s infinite;
+}
+
+/* Stagger children animations */
+.stagger-children > *:nth-child(1) { animation-delay: 0s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.5s; }
+
+/* ============================================
+   TICKER STYLES
+   ============================================ */
+
+.ticker-wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 }
 
 .ticker-track {
   display: inline-flex;
   align-items: center;
   white-space: nowrap;
-  gap: 3rem;
-  animation: tickerMove 24s linear infinite;
+  gap: 4rem;
+  animation: tickerMove 25s linear infinite;
 }
 
-.ticker-reverse {
-  animation-direction: reverse;
-}
-
-.ticker-wrapper {
-  overflow: hidden;
-  width: 100%;
+.ticker-track.ticker-reverse {
+  animation: tickerScrollReverse 25s linear infinite;
 }
 
 .ticker-item {
+  display: inline-block;
+  padding-inline-end: 4rem;
   flex-shrink: 0;
 }
 
-/* Custom scrollbar matching hospital theme */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-beige-100);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-burgundy-800);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-burgundy-700);
+.ticker-wrapper:hover .ticker-track,
+.ticker-wrapper:hover .ticker-track.ticker-reverse {
+  animation-play-state: paused;
 }
 
+/* ============================================
+   SHIMMER LOADING EFFECT
+   ============================================ */
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0e8d5 0%,
+    #f8f2e5 40%,
+    #f0e8d5 80%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   GLASSMORPHISM UTILITIES
+   ============================================ */
+
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.glass-dark {
+  background: rgba(30, 15, 15, 0.65);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.glass-modal {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(1.8);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 24px 80px -12px rgba(61, 12, 12, 0.15),
+    0 8px 24px -8px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+
+.card-hover {
+  transition: all 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #7A2E2E, #B8860B, #0D9488);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px -12px rgba(61, 12, 12, 0.15),
+              0 8px 16px -4px rgba(0, 0, 0, 0.06);
+}
+
+.card-hover:hover::after {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   HERO DECORATIVE ELEMENTS
+   ============================================ */
+
+.hero-pattern {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 25%),
+    radial-gradient(circle at 80% 20%, rgba(13, 148, 136, 0.06) 0%, transparent 35%);
+}
+
+.hero-animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+/* ============================================
+   HEADER GLOW LINE
+   ============================================ */
+
+.header-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.header-glow::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(122, 46, 46, 0.08) 20%,
+    rgba(184, 134, 11, 0.15) 50%,
+    rgba(13, 148, 136, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* ============================================
+   SECTION DIVIDERS
+   ============================================ */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(122, 46, 46, 0.15) 50%,
+    transparent 100%
+  );
+}
+
+/* ============================================
+   GRADIENT TEXT
+   ============================================ */
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #B8860B 0%, #D4A843 50%, #FFD94D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(135deg, #0D9488 0%, #14B8A6 50%, #5EEAD4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-burgundy {
+  background: linear-gradient(135deg, #3D0C0C 0%, #7A2E2E 40%, #9E4A4A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-mixed {
+  background: linear-gradient(135deg, #3D0C0C 0%, #7A2E2E 30%, #B8860B 60%, #0D9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   IMAGE OPTIMIZATION
+   ============================================ */
+
+.img-cover {
+  object-fit: cover;
+  object-position: center;
+}
+
+.img-contain {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY HELPERS
+   ============================================ */
+
+.heading-xl {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 900;
+}
+
+.heading-lg {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.heading-md {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* ============================================
+   PRINT STYLES (for medical reports)
+   ============================================ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

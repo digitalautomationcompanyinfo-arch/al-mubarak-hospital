@@ -36,4 +36,12 @@ export interface MediaStat {
   change: string;
   isPositive: boolean;
   iconName: string;
+}export interface Doctor {
+  id: string;
+  name: string;
+  title: string;
+  specialty: string;
+  isVisiting: boolean;
+  image: string;
+  availableDays: string[];
 }

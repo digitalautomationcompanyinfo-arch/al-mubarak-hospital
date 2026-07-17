@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { NewsArticle, PatientFeedback, MediaStat } from "../types";
 import DynamicIcon, { IconName } from "./DynamicIcon";
+import ScrollReveal from "./ScrollReveal";
+import AnimatedCounter from "./AnimatedCounter";
 import { translations } from "../data/translations";
 import {
   AreaChart,
@@ -22,6 +24,7 @@ interface StaffPortalProps {
   onUpdateFeedbackStatus: (id: string, replyText: string) => void;
   onDeleteFeedback: (id: string) => void;
   lang: "ar" | "en";
+  authToken?: string | null;
 }
 
 export default function StaffPortal({
@@ -31,7 +34,8 @@ export default function StaffPortal({
   onPublishNews,
   onUpdateFeedbackStatus,
   onDeleteFeedback,
-  lang
+  lang,
+  authToken
 }: StaffPortalProps) {
   const t = translations[lang];
 
@@ -147,7 +151,10 @@ export default function StaffPortal({
     try {
       const response = await fetch("/api/generate-press-release", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": authToken ? `Bearer ${authToken}` : ""
+        },
         body: JSON.stringify({
           topic: pressTopic,
           keyPoints: pressPoints,
@@ -224,7 +231,10 @@ export default function StaffPortal({
     try {
       const response = await fetch("/api/generate-social-post", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": authToken ? `Bearer ${authToken}` : ""
+        },
         body: JSON.stringify({
           sourceText: socialSource,
           platform: socialPlatform
@@ -266,7 +276,10 @@ export default function StaffPortal({
     try {
       const response = await fetch("/api/suggest-patient-reply", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": authToken ? `Bearer ${authToken}` : ""
+        },
         body: JSON.stringify({
           inquiryText: feedback.message,
           type: feedback.type
@@ -333,7 +346,7 @@ export default function StaffPortal({
     <div className="space-y-8 animate-fade-in w-full">
       
       {/* Tab Selector inside Staff Portal */}
-      <div className="bg-white border border-slate-100 p-2 rounded-2xl shadow-sm flex flex-wrap gap-2">
+      <div className="glass border border-slate-100 p-2 rounded-2xl shadow-sm flex flex-wrap gap-2">
         {[
           { id: "dashboard", label: t.panelDashboard, icon: "LayoutDashboard" },
           { id: "press", label: t.panelPress, icon: "FileText" },
@@ -348,7 +361,7 @@ export default function StaffPortal({
             }}
             className={`flex items-center gap-2 px-4 py-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               activeTab === tab.id
-                ? "bg-burgundy-800 text-white shadow-md shadow-burgundy-850/10"
+                ? "bg-burgundy-850 text-white shadow-md shadow-burgundy-850/10"
                 : "text-slate-600 hover:bg-slate-50 hover:text-burgundy-850"
             }`}
           >
@@ -369,14 +382,16 @@ export default function StaffPortal({
       {activeTab === "dashboard" && (
         <div className="space-y-8">
           {/* Header */}
-          <div className={`space-y-1.5 ${alignClass}`}>
-            <h2 className="text-xl md:text-2xl font-black text-slate-900">{t.statsTitle}</h2>
-            <p className="text-xs text-slate-500 font-medium">
-              {lang === "ar" 
-                ? "إحصاءات شاملة لتغطيتنا الصحفية وأداء الردود والتواصل مع المواطنين في كسلا، حي الجسر."
-                : "Comprehensive analytics of our press coverage, response efficiency, and citizen outreach in Al-Gisr, Kassala."}
-            </p>
-          </div>
+          <ScrollReveal direction="fade-up" delay={50}>
+            <div className={`space-y-1.5 ${alignClass}`}>
+              <h2 className="text-xl md:text-2xl font-black text-slate-900 text-gradient-burgundy">{t.statsTitle}</h2>
+              <p className="text-xs text-slate-500 font-medium">
+                {lang === "ar" 
+                  ? "إحصاءات شاملة لتغطيتنا الصحفية وأداء الردود والتواصل مع المواطنين."
+                  : "Comprehensive analytics of our press coverage, response efficiency, and citizen outreach."}
+              </p>
+            </div>
+          </ScrollReveal>
 
           {/* Stats grid */}
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -391,21 +406,25 @@ export default function StaffPortal({
               }
 
               return (
-                <div key={idx} className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm flex flex-col justify-between gap-4 hover:shadow-md transition-shadow">
-                  <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-slate-400">{localizedLabel}</span>
-                    <div className="p-2.5 bg-burgundy-100 text-burgundy-800 rounded-xl border border-burgundy-200/50">
-                      <DynamicIcon name={stat.iconName as IconName} size={16} />
+                <ScrollReveal key={idx} direction="fade-up" delay={idx * 60 + 100}>
+                  <div className="bg-white border border-slate-100 rounded-2xl p-6 shadow-sm flex flex-col justify-between gap-4 hover:shadow-lg transition-all card-hover h-full">
+                    <div className="flex items-center justify-between">
+                      <span className="text-[11px] font-bold text-slate-400">{localizedLabel}</span>
+                      <div className="p-2.5 bg-burgundy-100 text-burgundy-850 rounded-xl border border-burgundy-200/50">
+                        <DynamicIcon name={stat.iconName as IconName} size={16} />
+                      </div>
+                    </div>
+                    <div className={`space-y-1 ${alignClass}`}>
+                      <h3 className="text-2xl font-black text-slate-900 tracking-tight">
+                        <AnimatedCounter target={stat.value} />
+                      </h3>
+                      <span className="text-[11px] text-green-600 font-extrabold flex items-center gap-1">
+                        <span>▲</span>
+                        <span>{stat.change}</span>
+                      </span>
                     </div>
                   </div>
-                  <div className={`space-y-1 ${alignClass}`}>
-                    <h3 className="text-2xl font-black text-slate-900 tracking-tight">{stat.value}</h3>
-                    <span className="text-[11px] text-green-600 font-extrabold flex items-center gap-1">
-                      <span>▲</span>
-                      <span>{stat.change}</span>
-                    </span>
-                  </div>
-                </div>
+                </ScrollReveal>
               );
             })}
           </div>
@@ -415,7 +434,7 @@ export default function StaffPortal({
             <div className={`flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 ${alignClass}`}>
               <div className="space-y-1">
                 <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-                  <DynamicIcon name="LineChart" size={18} className="text-burgundy-800" />
+                  <DynamicIcon name="TrendingUp" size={18} className="text-burgundy-800" />
                   <span>
                     {lang === "ar" ? "حجم تفاعل وآراء المراجعين عبر الزمن" : "Patient Feedback & Inquiry Volume Over Time"}
                   </span>

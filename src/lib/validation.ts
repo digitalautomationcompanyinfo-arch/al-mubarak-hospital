@@ -78,12 +78,12 @@ export type LoginFormData = z.infer<typeof loginSchema>;
 
 // Helper to format Zod errors for display
 export function formatZodErrors(error: z.ZodError): string {
-  return error.errors.map((e) => e.message).join("\n");
+  return error.issues.map((e) => e.message).join("\n");
 }
 
 // Helper to get field-specific error
 export function getFieldError(error: z.ZodError | null, field: string): string | undefined {
   if (!error) return undefined;
-  const fieldError = error.errors.find((e) => e.path[0] === field);
+  const fieldError = error.issues.find((e) => e.path[0] === field);
   return fieldError?.message;
 }

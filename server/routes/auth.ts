@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import rateLimit from "express-rate-limit";
 
 const router = Router();
@@ -7,14 +7,30 @@ const router = Router();
 const DEMO_PASSWORD = process.env.STAFF_PASSWORD || "1234";
 
 // Simple in-memory token store (for demo purposes)
-const validTokens = new Set<string>();
+export const validTokens = new Set<string>();
 
 function generateToken(): string {
-  const token = `mubarak_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`;
+  const token = `mubarak_${Date.now()}_${Math.random().toString(36).substring(2, 15)}${Math.random().toString(36).substring(2, 15)}`;
   validTokens.add(token);
   // Token expires after 2 hours
   setTimeout(() => validTokens.delete(token), 2 * 60 * 60 * 1000);
   return token;
+}
+
+// Authentication Middleware for internal staff endpoints
+export function requireAuth(req: Request, res: Response, next: NextFunction) {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.startsWith("Bearer ")
+    ? authHeader.substring(7)
+    : (req.headers["x-auth-token"] as string) || (req.body && req.body.token);
+
+  if (!token || !validTokens.has(token)) {
+    return res.status(401).json({
+      error: "غير مصرح: يجب تسجيل الدخول برمز الصلاحية للوصول إلى هذه الخدمة",
+      unauthorized: true,
+    });
+  }
+  next();
 }
 
 // Rate limiting: max 5 login attempts per IP per 15 minutes
@@ -32,10 +48,10 @@ const loginLimiter = rateLimit({
 router.post("/login", loginLimiter, (req: Request, res: Response) => {
   const { password } = req.body;
 
-  if (!password) {
+  if (!password || typeof password !== "string") {
     return res.status(400).json({
       success: false,
-      error: "كلمة المرور مطلوبة",
+      error: "كلمة المرور مطلوبة وبصيغة صحيحة",
     });
   }
 
@@ -58,7 +74,7 @@ router.post("/login", loginLimiter, (req: Request, res: Response) => {
 router.post("/verify", (req: Request, res: Response) => {
   const { token } = req.body;
 
-  if (!token || !validTokens.has(token)) {
+  if (!token || typeof token !== "string" || !validTokens.has(token)) {
     return res.status(401).json({
       success: false,
       valid: false,
@@ -75,7 +91,7 @@ router.post("/verify", (req: Request, res: Response) => {
 router.post("/logout", (req: Request, res: Response) => {
   const { token } = req.body;
 
-  if (token) {
+  if (token && typeof token === "string") {
     validTokens.delete(token);
   }
 

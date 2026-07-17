@@ -12,9 +12,21 @@ dotenv.config();
 
 async function startServer() {
   const app = express();
-  app.use(express.json());
 
-  const PORT = process.env.PORT || 3000;
+  // Security Headers Middleware
+  app.use((_req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "DENY");
+    res.setHeader("X-XSS-Protection", "1; mode=block");
+    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+    next();
+  });
+
+  // Limit JSON payload size to 100kb to prevent denial of service via huge requests
+  app.use(express.json({ limit: "100kb" }));
+
+  const PORT = Number(process.env.PORT) || 3000;
 
   // --- API Routes ---
 
