@@ -8,11 +8,13 @@
 
 /* === CSS Variables / Theme === */
 :root {
-  --color-primary: #3D0C0C;
-  --color-primary-light: #7A2E2E;
-  --color-primary-dark: #1A0505;
-  --color-accent: #0D9488;
-  --color-accent-light: #14B8A6;
+  --color-primary: #DC2626;
+  --color-primary-light: #EF4444;
+  --color-primary-dark: #7F1D1D;
+  --color-secondary-green: #059669;
+  --color-secondary-green-light: #10B981;
+  --color-accent: #059669;
+  --color-accent-light: #10B981;
   --color-gold: #B8860B;
   --color-gold-light: #D4A843;
   --font-heading: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
@@ -35,17 +37,17 @@ html {
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #7A2E2E, #9E4A4A);
+  background: linear-gradient(180deg, #DC2626, #10B981);
   border-radius: 4px;
   border: 2px solid #F8F6F0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #3D0C0C, #7A2E2E);
+  background: linear-gradient(180deg, #7F1D1D, #059669);
 }
 
 /* === Focus visible styles === */
 :focus-visible {
-  outline: 2px solid #0D9488;
+  outline: 2px solid #059669;
   outline-offset: 2px;
   border-radius: 8px;
 }
@@ -55,19 +57,55 @@ html {
   --font-sans: "Cairo", "Tajawal", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  /* Burgundy Palette - Hospital Primary */
-  --color-burgundy-950: #1A0505;
-  --color-burgundy-900: #3D0C0C;
-  --color-burgundy-850: #5C1A1A;
-  --color-burgundy-800: #7A2E2E;
-  --color-burgundy-750: #8B3A3A;
-  --color-burgundy-700: #9E4A4A;
-  --color-burgundy-600: #B55C5C;
-  --color-burgundy-500: #C97070;
-  --color-burgundy-400: #DA8C8C;
-  --color-burgundy-300: #EAB5B5;
-  --color-burgundy-200: #F5D8D8;
-  --color-burgundy-100: #FCF0F0;
+  /* Red Palette - Hospital Primary (Replaces Maroon/Burgundy) */
+  --color-burgundy-950: #450A0A;
+  --color-burgundy-900: #7F1D1D;
+  --color-burgundy-850: #991B1B;
+  --color-burgundy-800: #B91C1C;
+  --color-burgundy-750: #C2410C;
+  --color-burgundy-700: #DC2626;
+  --color-burgundy-600: #EF4444;
+  --color-burgundy-500: #F87171;
+  --color-burgundy-400: #FCA5A5;
+  --color-burgundy-300: #FCA5A5;
+  --color-burgundy-200: #FECACA;
+  --color-burgundy-100: #FEE2E2;
+
+  --color-red-950: #450A0A;
+  --color-red-900: #7F1D1D;
+  --color-red-850: #991B1B;
+  --color-red-800: #B91C1C;
+  --color-red-750: #C2410C;
+  --color-red-700: #DC2626;
+  --color-red-600: #EF4444;
+  --color-red-500: #F87171;
+  --color-red-400: #FCA5A5;
+  --color-red-300: #FCA5A5;
+  --color-red-200: #FECACA;
+  --color-red-100: #FEE2E2;
+
+  /* Emerald / Medical Green Palette */
+  --color-emerald-950: #022C22;
+  --color-emerald-900: #064E3B;
+  --color-emerald-850: #065F46;
+  --color-emerald-800: #047857;
+  --color-emerald-700: #059669;
+  --color-emerald-600: #10B981;
+  --color-emerald-500: #34D399;
+  --color-emerald-400: #6EE7B7;
+  --color-emerald-300: #A7F3D0;
+  --color-emerald-200: #C6F6D5;
+  --color-emerald-100: #D1FAE5;
+  --color-emerald-50: #ECFDF5;
+
+  --color-green-950: #022C22;
+  --color-green-900: #064E3B;
+  --color-green-800: #047857;
+  --color-green-700: #059669;
+  --color-green-600: #10B981;
+  --color-green-500: #34D399;
+  --color-green-400: #6EE7B7;
+  --color-green-100: #D1FAE5;
 
   /* Beige/Warm Palette - Background */
   --color-beige-50: #FDF9F2;
@@ -105,8 +143,8 @@ body {
   font-family: var(--font-body);
   background: #FDF9F2;
   background-image:
-    radial-gradient(ellipse at 20% 0%, rgba(125, 46, 46, 0.03) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 100%, rgba(13, 148, 136, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 0%, rgba(220, 38, 38, 0.05) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(16, 185, 129, 0.06) 0%, transparent 60%),
     linear-gradient(180deg, #FDF9F2 0%, #F8F2E5 50%, #F5EDDD 100%);
   color: #1e1e1e;
   min-height: 100vh;
@@ -379,7 +417,7 @@ textarea:focus-visible {
 }
 
 .glass-dark {
-  background: rgba(30, 15, 15, 0.65);
+  background: rgba(35, 12, 12, 0.65);
   backdrop-filter: blur(20px) saturate(1.4);
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -392,7 +430,7 @@ textarea:focus-visible {
   -webkit-backdrop-filter: blur(24px) saturate(1.8);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow:
-    0 24px 80px -12px rgba(61, 12, 12, 0.15),
+    0 24px 80px -12px rgba(220, 38, 38, 0.15),
     0 8px 24px -8px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
@@ -414,7 +452,7 @@ textarea:focus-visible {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #7A2E2E, #B8860B, #0D9488);
+  background: linear-gradient(90deg, #DC2626, #10B981, #B8860B);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -422,7 +460,7 @@ textarea:focus-visible {
 
 .card-hover:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -12px rgba(61, 12, 12, 0.15),
+  box-shadow: 0 20px 40px -12px rgba(220, 38, 38, 0.15),
               0 8px 16px -4px rgba(0, 0, 0, 0.06);
 }
 
@@ -437,7 +475,7 @@ textarea:focus-visible {
 .hero-pattern {
   background-image:
     radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 25%),
-    radial-gradient(circle at 80% 20%, rgba(13, 148, 136, 0.06) 0%, transparent 35%);
+    radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 35%);
 }
 
 .hero-animated-gradient {
@@ -464,9 +502,9 @@ textarea:focus-visible {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(122, 46, 46, 0.08) 20%,
-    rgba(184, 134, 11, 0.15) 50%,
-    rgba(13, 148, 136, 0.08) 80%,
+    rgba(220, 38, 38, 0.2) 20%,
+    rgba(16, 185, 129, 0.3) 50%,
+    rgba(184, 134, 11, 0.2) 80%,
     transparent 100%
   );
 }
@@ -480,7 +518,9 @@ textarea:focus-visible {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(122, 46, 46, 0.15) 50%,
+    rgba(220, 38, 38, 0.15) 30%,
+    rgba(16, 185, 129, 0.2) 50%,
+    rgba(220, 38, 38, 0.15) 70%,
     transparent 100%
   );
 }
@@ -497,21 +537,35 @@ textarea:focus-visible {
 }
 
 .text-gradient-teal {
-  background: linear-gradient(135deg, #0D9488 0%, #14B8A6 50%, #5EEAD4 100%);
+  background: linear-gradient(135deg, #059669 0%, #10B981 50%, #34D399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #7F1D1D 0%, #DC2626 50%, #EF4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, #064E3B 0%, #059669 50%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-burgundy {
-  background: linear-gradient(135deg, #3D0C0C 0%, #7A2E2E 40%, #9E4A4A 100%);
+  background: linear-gradient(135deg, #7F1D1D 0%, #DC2626 50%, #EF4444 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-mixed {
-  background: linear-gradient(135deg, #3D0C0C 0%, #7A2E2E 30%, #B8860B 60%, #0D9488 100%);
+  background: linear-gradient(135deg, #DC2626 0%, #059669 35%, #10B981 65%, #B8860B 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

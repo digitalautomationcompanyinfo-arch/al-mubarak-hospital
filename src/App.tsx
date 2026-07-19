@@ -251,7 +251,7 @@ export default function App() {
                 setShowAppointmentModal(true);
                 setMobileMenuOpen(false);
               }}
-              className="hidden md:flex px-5 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 hover:from-gold-700 hover:to-gold-600 text-white font-bold rounded-xl text-xs transition-all items-center gap-1.5 shadow-lg shadow-gold-600/20 border border-gold-400/20 cursor-pointer"
+              className="hidden md:flex px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 text-white font-bold rounded-xl text-xs transition-all items-center gap-1.5 shadow-lg shadow-emerald-600/25 border border-emerald-400/20 cursor-pointer"
               id="appointment-btn"
             >
               <DynamicIcon name="Phone" size={14} className="text-white" />
@@ -332,7 +332,7 @@ export default function App() {
                   setShowAppointmentModal(true);
                   setMobileMenuOpen(false);
                 }}
-                className="px-3 py-2.5 bg-gradient-to-r from-gold-600 to-gold-500 text-white font-bold rounded-xl text-[11px] transition-all flex items-center justify-center gap-1.5 shadow-sm border border-gold-400/20 cursor-pointer"
+                className="px-3 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-500 text-white font-bold rounded-xl text-[11px] transition-all flex items-center justify-center gap-1.5 shadow-sm border border-emerald-400/20 cursor-pointer"
               >
                 <DynamicIcon name="Phone" size={13} className="text-white" />
                 <span>{t.bookAppointment}</span>
@@ -361,10 +361,10 @@ export default function App() {
           /* Render internal Media & PR dashboard */
           <div className="space-y-6">
             {/* Header Banner */}
-            <div className="bg-gradient-to-br from-burgundy-950 via-[#3D0C0C] to-burgundy-850 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-burgundy-850/30 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="bg-gradient-to-br from-red-950 via-[#7F1D1D] to-emerald-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl border border-emerald-500/20 flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="space-y-2 text-center md:text-start">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-burgundy-600/15 border border-burgundy-600/25 text-burgundy-400 text-[10px] font-extrabold rounded-full uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-burgundy-500 animate-ping"></span>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/15 border border-emerald-500/25 text-emerald-400 text-[10px] font-extrabold rounded-full uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
                   {t.activeStaffBoard}
                 </span>
                 <h2 className="text-xl md:text-3xl font-black text-white leading-snug">{t.staffPortalTitle}</h2>
@@ -413,7 +413,7 @@ export default function App() {
           <div className="glass-modal rounded-3xl w-full max-w-md overflow-hidden transform transition-all animate-scale-up">
             
             {/* Modal Header */}
-            <div className="bg-gradient-to-br from-[#1A0505] to-burgundy-850 text-white p-8 text-center space-y-3.5 relative">
+            <div className="bg-gradient-to-br from-[#450A0A] via-[#7F1D1D] to-[#064E3B] text-white p-8 text-center space-y-3.5 relative">
               <button
                 onClick={() => {
                   setShowLoginModal(false);

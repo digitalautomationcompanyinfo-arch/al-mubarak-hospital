@@ -187,14 +187,14 @@ export default function TrainingSection({ lang }: TrainingSectionProps) {
   return (
     <div className="w-full animate-fade-in">
       {/* Hero Banner */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d3b4c] via-[#0a2a3a] to-slate-900 text-white p-8 md:p-14 shadow-xl border border-white/5 mb-10">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#064E3B] via-[#7F1D1D] to-slate-900 text-white p-8 md:p-14 shadow-xl border border-emerald-500/20 mb-10">
         <div className="absolute -top-20 -right-20 w-80 h-80 border-[30px] border-white/[0.03] rounded-full pointer-events-none"></div>
         <div className="absolute top-10 right-16 w-16 h-16 border border-white/10 rounded-3xl pointer-events-none rotate-12"></div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-center relative z-10">
           <div className="lg:col-span-7 space-y-5">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-teal-400/10 border border-teal-400/20 text-teal-300 text-xs font-bold">
-              <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               {isAr ? "بوابة التدريب والتطوير" : "Training & Development Portal"}
             </span>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">

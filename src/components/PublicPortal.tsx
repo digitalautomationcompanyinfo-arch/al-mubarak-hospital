@@ -275,7 +275,7 @@ export default function PublicPortal({
         <div className="space-y-12 animate-fade-in">
           
           {/* Hero Section */}
-          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-burgundy-950 via-burgundy-850 to-[#3D0C0C] text-white p-8 md:p-16 shadow-xl border border-burgundy-900/10 hero-animated-gradient">
+          <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-950 via-[#7F1D1D] to-emerald-950 text-white p-8 md:p-16 shadow-xl border border-emerald-500/20 hero-animated-gradient">
             {/* Elegant Geometric Background Accents */}
             <div className="absolute -bottom-20 -right-20 w-96 h-96 border-[40px] border-white/[0.03] rounded-full pointer-events-none"></div>
             <div className="absolute top-10 right-10 w-20 h-20 border border-white/10 rounded-3xl pointer-events-none rotate-12"></div>
@@ -287,8 +287,8 @@ export default function PublicPortal({
               
               {/* Text Column */}
               <div className="lg:col-span-7 space-y-6">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-semibold text-burgundy-300">
-                  <span className="w-2 h-2 rounded-full bg-burgundy-600 animate-pulse"></span>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-xs font-semibold text-emerald-300">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                   {t.heroWelcome}
                 </span>
                 <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight tracking-tight">
@@ -355,10 +355,10 @@ export default function PublicPortal({
           <ScrollReveal direction="fade-up" delay={100}>
           <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              { label: t.homeStat1Label, val: t.homeStat1Val, bg: "bg-white border border-slate-100 shadow-sm", txtColor: "text-burgundy-850", icon: "Users", iconBg: "bg-burgundy-100 text-burgundy-800" },
-              { label: t.homeStat2Label, val: t.homeStat2Val, bg: "bg-gradient-to-tr from-burgundy-900 to-burgundy-800 text-white shadow-md shadow-burgundy-900/10", txtColor: "text-white", icon: "Building", iconBg: "bg-white/10 text-white" },
-              { label: t.homeStat3Label, val: t.homeStat3Val, bg: "bg-white border border-slate-150 shadow-sm", txtColor: "text-slate-800", icon: "Activity", iconBg: "bg-burgundy-100 text-burgundy-700" },
-              { label: t.homeStat4Label, val: t.homeStat4Val, bg: "bg-gradient-to-tr from-slate-900 to-slate-800 text-white shadow-md", txtColor: "text-white", icon: "Clock", iconBg: "bg-white/10 text-white" }
+              { label: t.homeStat1Label, val: t.homeStat1Val, bg: "bg-white border border-slate-100 shadow-sm", txtColor: "text-red-800", icon: "Users", iconBg: "bg-red-100 text-red-700" },
+              { label: t.homeStat2Label, val: t.homeStat2Val, bg: "bg-gradient-to-tr from-emerald-800 to-emerald-600 text-white shadow-md shadow-emerald-700/20", txtColor: "text-white", icon: "Building", iconBg: "bg-white/15 text-white" },
+              { label: t.homeStat3Label, val: t.homeStat3Val, bg: "bg-white border border-emerald-100 shadow-sm", txtColor: "text-slate-800", icon: "Activity", iconBg: "bg-emerald-100 text-emerald-800" },
+              { label: t.homeStat4Label, val: t.homeStat4Val, bg: "bg-gradient-to-tr from-red-900 to-red-800 text-white shadow-md shadow-red-900/15", txtColor: "text-white", icon: "Clock", iconBg: "bg-white/15 text-white" }
             ].map((stat, idx) => (
               <div
                 key={idx}
@@ -380,8 +380,8 @@ export default function PublicPortal({
           <ScrollReveal direction="fade-up" delay={150}>
           <section className="grid md:grid-cols-12 gap-8 items-center bg-white p-6 md:p-10 rounded-3xl border border-slate-100 shadow-md">
             <div className={`md:col-span-7 space-y-6 ${alignClass}`}>
-              <span className="text-burgundy-700 font-bold text-xs tracking-wider flex items-center gap-1.5 justify-start">
-                <span className="w-2 h-2 rounded-full bg-burgundy-600 animate-ping"></span>
+              <span className="text-emerald-700 font-bold text-xs tracking-wider flex items-center gap-1.5 justify-start">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
                 {t.locSectionTitle}
               </span>
               <h2 className="text-2xl md:text-3xl font-black text-slate-900 leading-tight">
@@ -393,7 +393,7 @@ export default function PublicPortal({
               
               <div className="space-y-4 border-slate-100 border-s-2 ps-4">
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 bg-burgundy-100 text-burgundy-800 p-2 rounded-xl border border-burgundy-200 shrink-0">
+                  <div className="mt-1 bg-emerald-100 text-emerald-800 p-2 rounded-xl border border-emerald-200 shrink-0">
                     <DynamicIcon name="MapPin" size={16} />
                   </div>
                   <div>
@@ -403,7 +403,7 @@ export default function PublicPortal({
                 </div>
                 
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 bg-burgundy-100 text-burgundy-800 p-2 rounded-xl border border-burgundy-200 shrink-0">
+                  <div className="mt-1 bg-emerald-100 text-emerald-800 p-2 rounded-xl border border-emerald-200 shrink-0">
                     <DynamicIcon name="Clock" size={16} />
                   </div>
                   <div>
@@ -413,7 +413,7 @@ export default function PublicPortal({
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <div className="mt-1 bg-burgundy-100 text-burgundy-800 p-2 rounded-xl border border-burgundy-200 shrink-0">
+                  <div className="mt-1 bg-emerald-100 text-emerald-800 p-2 rounded-xl border border-emerald-200 shrink-0">
                     <DynamicIcon name="Phone" size={16} />
                   </div>
                   <div>
@@ -621,14 +621,14 @@ export default function PublicPortal({
 
             {/* Interactive AI Health Helper Search */}
             <div className="bg-gradient-to-br from-slate-950 to-slate-900 text-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-800 relative overflow-hidden space-y-6">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-burgundy-850/10 rounded-full blur-3xl pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
               
               <div className={`space-y-2 relative z-10 ${alignClass}`}>
                 <div className="flex items-center gap-2">
-                  <span className="p-1 bg-burgundy-600/10 text-burgundy-500 rounded-lg">
+                  <span className="p-1 bg-emerald-500/15 text-emerald-400 rounded-lg">
                     <DynamicIcon name="Sparkles" size={14} />
                   </span>
-                  <span className="text-[10px] font-bold text-burgundy-500 uppercase tracking-widest">
+                  <span className="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">
                     {lang === "ar" ? "المساعد الطبي الرقمي التفاعلي" : "INTERACTIVE AI CLINICAL ADVISOR"}
                   </span>
                 </div>
@@ -650,16 +650,16 @@ export default function PublicPortal({
                     value={healthTopic}
                     onChange={(e) => setHealthTopic(e.target.value)}
                     placeholder={t.healthTipTopicPlaceholder}
-                    className={`flex-1 px-4 py-3 bg-slate-800/80 border border-slate-700/60 rounded-xl text-xs md:text-sm focus:outline-none focus:border-burgundy-600 focus:bg-slate-900 text-white font-semibold placeholder-slate-500 ${alignClass}`}
+                    className={`flex-1 px-4 py-3 bg-slate-800/80 border border-slate-700/60 rounded-xl text-xs md:text-sm focus:outline-none focus:border-emerald-500 focus:bg-slate-900 text-white font-semibold placeholder-slate-500 ${alignClass}`}
                   />
                   <button
                     onClick={() => handleFetchAiTip()}
                     disabled={isGeneratingTip || !healthTopic.trim()}
-                    className="px-6 py-3 bg-white hover:bg-burgundy-100 text-burgundy-850 font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-xs md:text-sm shrink-0"
+                    className="px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed text-xs md:text-sm shrink-0"
                   >
                     {isGeneratingTip ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-burgundy-950 border-t-transparent rounded-full animate-spin"></div>
+                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                         <span>{t.healthTipGenerating}</span>
                       </>
                     ) : (
@@ -779,7 +779,7 @@ export default function PublicPortal({
 
           {/* Hospital Director & Management Statement */}
           <ScrollReveal direction="fade-up" delay={200}>
-          <section className="bg-gradient-to-br from-burgundy-950 via-burgundy-900 to-slate-900 text-white rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl border border-burgundy-850/40">
+          <section className="bg-gradient-to-br from-red-950 via-red-900 to-emerald-950 text-white rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl border border-emerald-500/30">
             <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div className="grid md:grid-cols-12 gap-8 items-center relative z-10">

@@ -43,7 +43,7 @@ export default function AppointmentModal({ isOpen, onClose, lang }: AppointmentM
       <div className="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-100 relative animate-scale-up">
         
         {/* Header */}
-        <div className="bg-gradient-to-br from-burgundy-950 via-[#3D0C0C] to-burgundy-850 text-white p-6 md:p-8 space-y-2 relative text-start">
+        <div className="bg-gradient-to-br from-[#450A0A] via-[#7F1D1D] to-[#064E3B] text-white p-6 md:p-8 space-y-2 relative text-start">
           <button
             onClick={onClose}
             className="absolute top-5 end-5 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all cursor-pointer"
